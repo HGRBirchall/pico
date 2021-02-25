@@ -6,11 +6,12 @@ class NewFile:
     
     def __init__(self, file_name,j):
         try:
-            while uos.stat(file_name):
-                print ("File \""+ str(file_name)+ "\" already exist")
+            while uos.stat(str(file_name)+".txt"):
+                print ("File \""+ str(file_name)+ ".txt\" already exist")
                 j = int(j)+1
-                file_name = "/data/soil_logger"+str(j)+".txt"
+                file_name = "/data/soil_logger"+str(j)
             
         except OSError:
+            file_name = str(file_name) + ".txt"
             print ("File has been created as \"" + str(file_name) +"\"")
             j = int(j)+1
