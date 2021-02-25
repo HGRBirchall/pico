@@ -5,11 +5,12 @@ import uos
 class NewFile:
     
     def __init__(self, file_name,j):
+        file = file_name
         try:
             while uos.stat(str(file_name)+".txt"):
                 print ("File \""+ str(file_name)+ ".txt\" already exist")
                 j = int(j)+1
-                file_name = "/data/soil_logger"+str(j)
+                file_name = file+str(j)
             
         except OSError:
             file_name = str(file_name) + ".txt"
