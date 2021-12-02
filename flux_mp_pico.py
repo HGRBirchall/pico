@@ -184,7 +184,8 @@ try:
             led_onboard.value(0)
             time.sleep(rest)
             
-        file.close
+        file.close()
+        file = open(File, "a")
 
 # If file system is locked run code instesd
 except OSError:
